@@ -1,0 +1,8 @@
+.footer-4 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  background: #007db8 0% 0% no-repeat padding-box;
+}
