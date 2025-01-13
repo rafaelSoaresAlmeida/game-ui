@@ -7,6 +7,27 @@
   background: #007db8 0% 0% no-repeat padding-box;
 }
 
+:host ::ng-deep .p-menubar {
+  border: none;
+  background-color: #007db8;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem {
+  background-color: rgb(173, 255, 106);
+  margin: 12px;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-link .p-menuitem-text {
+  color: #b90a0a !important;
+}
+:host ::ng-deep .p-menubar .p-menu-list .p-menuitem {
+  color: #ff0c0c !important;
+}
+:host ::ng-deep .p-menubar .p-submenu-header {
+  color: #eb1414 !important;
+  background: #0da350 !important;
+}
+
 .icon {
   margin-left: 2rem;
   cursor: pointer;

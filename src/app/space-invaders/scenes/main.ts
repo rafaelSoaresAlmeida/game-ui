@@ -22,7 +22,9 @@ export class MainScene extends Phaser.Scene {
   alienManager: AlienManager;
   cursors: Phaser.Types.Input.Keyboard.CursorKeys;
   fireKey: Phaser.Input.Keyboard.Key;
-  enemySpeed = 2000;
+  intialEnemySpeed = 150;
+  enemySpeed = this.intialEnemySpeed;
+  enemySpeedMultiplication = 5;
 
   constructor() {
     super({
@@ -72,9 +74,14 @@ export class MainScene extends Phaser.Scene {
 
     this.fireKey.on('down', () => {
       switch (this.state) {
+        case GameState.NextLevel:
+          this.enemySpeed = this.enemySpeed * this.enemySpeedMultiplication;
+          this.restart(false);
+          break;
         case GameState.Win:
         case GameState.GameOver:
-          this.restart();
+          this.enemySpeed = this.intialEnemySpeed;
+          this.restart(true);
           break;
       }
     });
@@ -125,8 +132,9 @@ export class MainScene extends Phaser.Scene {
     this.scoreManager.increaseScore();
     if (!this.alienManager.hasAliveAliens) {
       this.scoreManager.increaseScore(1000);
-      this.scoreManager.setWinText();
-      this.state = GameState.Win;
+      this.scoreManager.setGameNextLevelText();
+
+      this.state = GameState.NextLevel;
     }
   }
 
@@ -180,10 +188,14 @@ export class MainScene extends Phaser.Scene {
     }
   }
 
-  restart() {
+  restart(resetLives: boolean) {
     this.state = GameState.Playing;
     this.player.enableBody(true, this.player.x, this.player.y, true, true);
-    this.scoreManager.resetLives();
+
+    if (resetLives) {
+      this.scoreManager.resetLives();
+    }
+
     this.scoreManager.hideText();
     this.alienManager.reset();
     this.assetManager.reset();
