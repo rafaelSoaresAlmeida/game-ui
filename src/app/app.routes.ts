@@ -3,7 +3,9 @@ import { HomeComponent } from './home/home.component';
 import { TetrisComponent } from './games/tetris/tetris.component';
 import { DinoComponent } from './games/dino/dino.component';
 import { FlappyTilapiaComponent } from './games/flappy-tilapia/flappy-tilapia.component';
-import { SpaceInvadersComponent } from './space-invaders/space-invaders.component';
+import { LoginComponent } from './security/login/login.component';
+import { PacManComponent } from './games/pac-man/pac-man.component';
+import { SpaceInvadersComponent } from './games/space-invaders/space-invaders.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -12,6 +14,8 @@ export const routes: Routes = [
   { path: 'dino', component: DinoComponent },
   { path: 'tilapia', component: FlappyTilapiaComponent },
   { path: 'spaceInvaders', component: SpaceInvadersComponent },
+  { path: 'pac', component: PacManComponent },
+  { path: 'login', component: LoginComponent },
 
   /*   
   { path: 'dino', component: DinoComponent, canActivate: [LoginActivate] }, */

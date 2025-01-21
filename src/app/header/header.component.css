@@ -12,7 +12,7 @@
   background-color: #007db8;
 }
 
-:host ::ng-deep .p-menubar .p-menuitem {
+/* :host ::ng-deep .p-menubar .p-menuitem {
   background-color: rgb(173, 255, 106);
   margin: 12px;
 }
@@ -27,7 +27,7 @@
   color: #eb1414 !important;
   background: #0da350 !important;
 }
-
+ */
 .icon {
   margin-left: 2rem;
   cursor: pointer;
