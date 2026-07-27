@@ -6,14 +6,15 @@ import { FlappyTilapiaComponent } from './games/flappy-tilapia/flappy-tilapia.co
 import { LoginComponent } from './security/login/login.component';
 import { PacManComponent } from './games/pac-man/pac-man.component';
 import { SpaceInvadersComponent } from './games/space-invaders/space-invaders.component';
-
+import { BattlecityComponent } from './games/battle-city/battlecity.component';
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/battleCity', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'tetris', component: TetrisComponent },
   { path: 'dino', component: DinoComponent },
   { path: 'tilapia', component: FlappyTilapiaComponent },
   { path: 'spaceInvaders', component: SpaceInvadersComponent },
+  { path: 'battleCity', component: BattlecityComponent },
   { path: 'pac', component: PacManComponent },
   { path: 'login', component: LoginComponent },
 
