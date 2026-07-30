@@ -31,6 +31,15 @@ export class HeaderComponent {
         label: 'Games',
         items: [
           {
+            label: '<span class="text-xl font-bold">Battle City</span>',
+            escape: false,
+            icon: 'pi pi-times',
+            iconClass: 'text-xl',
+            command: () => {
+              this.router.navigateByUrl('/battleCity');
+            },
+          },
+          {
             label: '<span class="text-xl font-bold">Dino</span>',
             escape: false,
             icon: 'pi pi-refresh',
